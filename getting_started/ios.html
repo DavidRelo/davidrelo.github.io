@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>hexo-theme-doc-seed | Build a live video streaming </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+
+    
+
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"Build a live video streaming","path":"getting_started/ios.html"},"data":{"navigation":{"logo":{"text":"ZEGOLive","type":"link","path":"index.html"},"main":[{"text":"GETTING STARTED","type":"label"},{"text":"Android","type":"link","path":"getting_started/android.html"},{"text":"iOS","type":"link","path":"getting_started/ios.html"},{"text":"SUPPORT AND FEEDBACK","type":"label"},{"text":"Raise an Issue on Github","type":"link","path":"https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"}]}},"config":{"timezone":"UTC","root":"/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"images/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">ZEGOLive</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <h1 id="Build-a-live-video-streaming"><a href="#Build-a-live-video-streaming" class="headerlink" title="Build a live video streaming"></a>Build a live video streaming</h1><hr>
+<p>ZEGO Live provides you the capability to build an interactive live streaming application by encapsulating the Express-Video SDK, ZIM SDK, and ZegoEffects SDK. This document describes how to build a live video streaming with the ZEGO Live SDK.</p>
+<p><br><br><br></p>
+<hr>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>Contact us to activate the ZEGO Live service, get the ZegoEffects SDK, and the resources and models that are required.</li>
+<li>Create a project in <a href="https://console.zegocloud.com/" target="_blank" rel="noopener">ZEGO Admin Console</a>. For details, see <a href="https://docs.zegocloud.com/article/1271" target="_blank" rel="noopener">ZEGO Admin Console - Project management</a>.</li>
+</ul>
+<h2 id="Understand-the-process"><a href="#Understand-the-process" class="headerlink" title="Understand the process"></a>Understand the process</h2><p>The following diagram shows the basic process of creating a live room and a participant (user B) playing a stream published by the host (user A).</p>
+<p><img src="../images/getting_started/ios/quickstart.png" alt="quickstart.png"></p>
+<h2 id="Integrate-the-ZEGOLive-SDK"><a href="#Integrate-the-ZEGOLive-SDK" class="headerlink" title="Integrate the ZEGOLive SDK"></a>Integrate the ZEGOLive SDK</h2><div class="mk-warning" style="background: #fafbfc;border: 1px solid #ff8830;border-radius: 4px;border-top-width: 4px;padding: 20px 20px 6px 20px;"><div style="color: #ff8830;">⚠️ Caution:</div>
+
+<p>The Server APIs that we used to implement live room related business logic in the ZEGO Live sample app are only for experience and debugging purposes.</p>
+<p>To build your own live streaming app, you can refer to ours to design your own business server APIs and replace them in our sample code. For more details about those Server APIs, see <a href="https://docs.zegocloud.com/article/13860" target="_blank" rel="noopener">Room related Server APIs</a>.</p>
+<p></div></p>
+<p>To integrate the SDK, do the following:</p>
+<ol>
+<li>Download the Sample codes, and copy the <code>ZEGOLive</code> folder to your project directory. </li>
+<li>Add the <code>Podfile</code> file to your project directory.</li>
+</ol>
+<p><img src="../images/getting_started/ios/podfile.png" alt="podfile.png"></p>
+<ol start="3">
+<li>Open Terminal, run the <code>install</code> command. </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod install</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>Put the ZegoEffects SDK dynamic library, resources, and models you get in the previous step into your project directory.</li>
+<li>In Xcode, select <strong>File &gt; Add Files to “xxx” (your project name)</strong>, and add the <strong>ZegoEffects SDK</strong>, <strong>resources</strong>, and <strong>models</strong> into the project.</li>
+<li>Select <strong>TARGETS &gt; General &gt; Frameworks,Libraries,and Enbedded Content</strong>, add the <code>ZegoEffects.xcframework</code>, and then set the <strong>Embed</strong> to <strong>Embed &amp; Sign</strong>.</li>
+<li>Select <strong>TARGET &gt; General &gt; Deployment Info</strong>, set it to version 13.0 or later.</li>
+</ol>
+<h2 id="Add-permissions"><a href="#Add-permissions" class="headerlink" title="Add permissions"></a>Add permissions</h2><p>Permissions can be set as needed.</p>
+<ol>
+<li>Open Xcode, select the target object, and then click <strong>Info &gt; Custom iOS Target Properties</strong>.</li>
+<li>Click the <strong>Add button (+)</strong> to add camera and microphone permissions.<br> <img src="../images/getting_started/ios/privacy-description-done.png" alt="Add Privacy Done"></li>
+</ol>
+<h2 id="Initialize-the-ZEGOLive-SDK"><a href="#Initialize-the-ZEGOLive-SDK" class="headerlink" title="Initialize the ZEGOLive SDK"></a>Initialize the ZEGOLive SDK</h2><p>To initialize the ZEGOLive SDK, get the <code>RoomManager</code> instance, pass the AppID and AppSign of your project. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Initialize the SDK. We recommend you call this method when the application starts.</span></span><br><span class="line"><span class="comment">// YOUR_APP_ID is the AppID you get from ZEGO Admin Console. </span></span><br><span class="line"><span class="comment">// YOUR_APP_SIGN is the AppSign you get from ZEGO Admin Console. </span></span><br><span class="line"><span class="type">RoomManager</span>.shared.initWithAppID(appID: <span class="type">YOUR_APP_ID</span>, appSign: <span class="type">YOUR_APP_SIGN</span>) &#123; result <span class="keyword">in</span></span><br><span class="line">    <span class="comment">// Callback for the result of init. </span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>To receive callbacks, set the corresponding <code>delegate</code> to <code>self</code>, or call the <code>addUserServiceDelegate</code> method to listen for and handle event callbacks as needed.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RoomManager</span>.shared.roomService.delegate = <span class="keyword">self</span></span><br><span class="line"><span class="type">RoomManager</span>.shared.userService.addUserServiceDelegate(<span class="keyword">self</span>)</span><br><span class="line"><span class="type">RoomManager</span>.shared.messageService.delegate = <span class="keyword">self</span></span><br></pre></td></tr></table></figure>
+<h2 id="Set-the-resource-path"><a href="#Set-the-resource-path" class="headerlink" title="Set the resource path"></a>Set the resource path</h2><p>Before implementing the face beautify feature, you will need to put the required resource files to the ZegoEffects SDK. To do so, call the following method and put the path of the resource into it. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> resourcePaths = [<span class="string">"xxx.model"</span>, <span class="string">"xxx.bundle"</span>]   </span><br><span class="line"><span class="type">RoomManager</span>.shared.beautifyService.setResources(resourcePaths)</span><br></pre></td></tr></table></figure>
+<h2 id="Log-in"><a href="#Log-in" class="headerlink" title="Log in"></a>Log in</h2><p>To access the ZEGOLive service, you must log in first.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userInfo = <span class="type">UserInfo</span>(<span class="string">"YOUR_USER_ID"</span>, <span class="string">"YOUR_USER_NAME"</span>, .participant)</span><br><span class="line"><span class="keyword">let</span> token: <span class="type">String</span> = <span class="string">"YOUR_ZIM_TOKEN"</span></span><br><span class="line"><span class="type">RoomManager</span>.shared.userService.login(userInfo, token) &#123; result <span class="keyword">in</span>  </span><br><span class="line">     <span class="comment">// Callback for the login result. </span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Start-the-local-video-preview"><a href="#Start-the-local-video-preview" class="headerlink" title="Start the local video preview"></a>Start the local video preview</h2><p>Before creating a live room to start live streaming, you can call the <code>playVideoStream</code> method to start the local video preview.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The [userID] can be used to specify which user's view you want to view. </span></span><br><span class="line"><span class="comment">// To preview your own local video view, pass in your userID.</span></span><br><span class="line"><span class="comment">// streamView view is a view for the local video preview.</span></span><br><span class="line"><span class="type">RoomManager</span>.shared.deviceService.playVideoStream(userID, view: streamView)</span><br></pre></td></tr></table></figure>
+<h2 id="Create-Join-a-live-room"><a href="#Create-Join-a-live-room" class="headerlink" title="Create/Join a live room"></a>Create/Join a live room</h2><ul>
+<li>You become a <strong>Host</strong> after creating a live room, and you can take a seat and start live streaming upon creating.</li>
+<li>You become a <strong>Participants</strong> after joining a live room, and you can watch the live streaming and be a <a href="https://docs.zegocloud.com/article/13823" target="_blank" rel="noopener">co-host</a> to interact.</li>
+</ul>
+<p>To create a live room, call the <code>createRoom</code> method.  </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> rtcToken: <span class="type">String</span> = <span class="string">"YOUR_RTC_TOKEN"</span></span><br><span class="line"><span class="type">RoomManager</span>.shared.roomService.createRoom(<span class="string">"YOUR_ROOM_ID"</span>, <span class="string">"YOUR_ROOM_NAME"</span>, rtcToken) &#123; result <span class="keyword">in</span></span><br><span class="line">    <span class="comment">// Callback for the result of create a live room. </span></span><br><span class="line">           </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>After a live room is created, to start live streaming, the host will need to call the <code>takeSeat</code> method to speak. And the SDK automatically publishes the streams when the host takes a seat successfully.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RoomManager</span>.shared.userService.takeSeat &#123; result <span class="keyword">in</span></span><br><span class="line">   <span class="comment">// Callback for the result of take a seat. </span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>To join a live room, call the <code>joinRoom</code> method. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> rtcToken: <span class="type">String</span> = <span class="string">"YOUR_RTC_TOKEN"</span></span><br><span class="line"><span class="type">RoomManager</span>.shared.roomService.joinRoom(<span class="string">"YOUR_ROOM_ID"</span>, rtcToken) &#123; result <span class="keyword">in</span></span><br><span class="line">   <span class="comment">// Callback for the result of join a live room. </span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>After joining a live room, for a participant to watch the live streaming, he will need to call the <code>playVideoStream</code> method to play the host’s published streams. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The [userID] can be used to specify which user's view you want to view. </span></span><br><span class="line"><span class="comment">// You can get the userID of the host in room info. </span></span><br><span class="line"><span class="comment">// streamView is the view to be displayed.</span></span><br><span class="line"><span class="type">RoomManager</span>.shared.deviceService.playVideoStream(userID, view: streamView)</span><br></pre></td></tr></table></figure>
+<h2 id="Send-Receive-text-chat-messages"><a href="#Send-Receive-text-chat-messages" class="headerlink" title="Send/Receive text chat messages"></a>Send/Receive text chat messages</h2><p>To send text chat messages in the room, call the <code>sendTextMessage</code> method.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RoomManager</span>.shared.messageService.sendTextMessage(<span class="string">"MESSAGE_CONTENT"</span>) &#123; result <span class="keyword">in</span></span><br><span class="line">    <span class="comment">// The result of send messages. </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>To receive the text chat messages, listen for the callback <code>receiveTextMessage</code>.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">receiveTextMessage</span><span class="params">(<span class="number">_</span> message: TextMessage)</span></span> &#123;</span><br><span class="line">    <span class="comment">// Implement the handling logic when receiving the text messages.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Leave-a-live-room"><a href="#Leave-a-live-room" class="headerlink" title="Leave a live room"></a>Leave a live room</h2><p>Before the host leaves the live room, he will need to call the <code>leaveSeat</code> to leave the seat first. And the SDK automatically stops publishing streams when the host leaves the seat successfully.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RoomManager</span>.shared.userService.leaveSeat &#123; <span class="type">Result</span> <span class="keyword">in</span></span><br><span class="line">     <span class="comment">// Callback for the result of leave a seat. </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>To leave the live room, call the <code>leaveRoom</code> method. And the SDK stops all the stream publishing and playing operations simultaneously.    </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RoomManager</span>.shared.roomService.leaveRoom &#123; <span class="type">Result</span> <span class="keyword">in</span></span><br><span class="line">     <span class="comment">// Callback for the result of leave a live room. </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Log-out"><a href="#Log-out" class="headerlink" title="Log out"></a>Log out</h2><p>To finish the ZEGOLive service, call the <code>logout</code> method.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RoomManager</span>.shared.userService.logout()</span><br></pre></td></tr></table></figure>
+<h2 id="Deinitialize-the-ZEGOLive-SDK"><a href="#Deinitialize-the-ZEGOLive-SDK" class="headerlink" title="Deinitialize the ZEGOLive SDK"></a>Deinitialize the ZEGOLive SDK</h2><p>To deinitialize the SDK to make it uninitialized, call the <code>uninit</code> method. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RoomManager</span>.shared.uninit()</span><br></pre></td></tr></table></figure>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/script/doc.js"></script>
+
+    
+
+  </body>
+</html>
