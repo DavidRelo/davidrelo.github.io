@@ -2,10 +2,10 @@
   "name": "hexo-theme-doc-seed",
   "version": "0.1.0",
   "hexo": {
-    "version": "3.9.0"
+    "version": "4.2.1"
   },
   "dependencies": {
-    "hexo": "^3.3.8",
+    "hexo": "^4.0.0",
     "hexo-cli": "^1.0.3",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-less": "^0.2.0",
