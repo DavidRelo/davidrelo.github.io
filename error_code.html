@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>hexo-theme-doc-seed | Error codes </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+
+    
+
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"Error codes","path":"error_code.html"},"data":{"navigation":{"logo":{"text":"ZEGO Live","type":"link","path":"index.html"},"main":[{"text":"SAMPLE APP","type":"label"},{"text":"Android","type":"link","path":"sample_app/android.html"},{"text":"GETTING STARTED","type":"label"},{"text":"Android","type":"link","path":"getting_started/android.html"},{"text":"iOS","type":"link","path":"getting_started/ios.html"},{"text":"SUPPORT AND FEEDBACK","type":"label"},{"text":"Error codes","type":"link","path":"error_code.html"},{"text":"Contact us","type":"link","path":"https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"}]}},"config":{"timezone":"UTC","root":"/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"images/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">ZEGO Live</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <h1 id="Error-codes"><a href="#Error-codes" class="headerlink" title="Error codes"></a>Error codes</h1><hr>
+<p>This document provides possible causes and solutions for common errors related to the live streaming.<br><br><br><br></p>
+<hr>
+<h2 id="General-errors"><a href="#General-errors" class="headerlink" title="General errors"></a>General errors</h2><table>
+<thead>
+<tr>
+<th>Error code</th>
+<th>Possible cause and solutions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>No error occurs.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>An unexpected error occurs. We recommend you contact us for solving the issue.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Room-errors-100x-range"><a href="#Room-errors-100x-range" class="headerlink" title="Room errors (100x range)"></a>Room errors (100x range)</h2><p>The error codes below return from the <code>createRoom</code> and <code>joinRoom</code> methods.</p>
+<table>
+<thead>
+<tr>
+<th>Error code</th>
+<th>Possible cause and solutions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1001</td>
+<td>Room ID already exists.  You can try with a new Room ID.</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Room ID does not exist. Please check the Room ID before logging in to a room.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Co-host-seat-and-other-errors-200x-range"><a href="#Co-host-seat-and-other-errors-200x-range" class="headerlink" title="Co-host seat and other errors (200x range)"></a>Co-host seat and other errors (200x range)</h2><p>The error codes below return from the <code>takeSeat</code>, <code>leaveSeat</code>, and methods that called for other operations.</p>
+<table>
+<thead>
+<tr>
+<th>Error code</th>
+<th>Possible cause and solutions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2001</td>
+<td>Failed to take a seat because there is no seat available. You can try to take the seat again.</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Failed to take a seat because the seat info failed to be set. You can try to take the seat again.</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Failed to take a seat because you are already on a seat.</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>Operation failed because permission is denied. Please do not perform operations that are not authorized.</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>Operation failed because the speaker seat has not been taken. You can try to take a speaker seat first.</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>Invalid parameter. Please check the passed parameter.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Other-SDK-errors"><a href="#Other-SDK-errors" class="headerlink" title="Other SDK errors"></a>Other SDK errors</h2><ul>
+<li>7-digit error code starting with <strong>10</strong>: The RTC SDK related error. For more details, see <a href="https://docs.zegocloud.com/article/5548" target="_blank" rel="noopener">Real-Time Audio and Video - Error codes</a>.</li>
+<li>7-digit error code starting with <strong>50</strong>: The AI Effects SDK related error. For more details, see <a href="https://docs.zegocloud.com/article/9931" target="_blank" rel="noopener">AI Effects - Error codes</a>.</li>
+<li>7-digit error code starting with <strong>60</strong>: The ZIM SDK related error. For more details, see <a href="https://docs.zegocloud.com/article/13792" target="_blank" rel="noopener">ZIM - Error codes</a>.</li>
+</ul>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/script/doc.js"></script>
+
+    
+
+  </body>
+</html>

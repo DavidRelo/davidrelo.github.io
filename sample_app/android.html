@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>hexo-theme-doc-seed |  </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+
+    
+
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"path":"sample_app/android.html","title":""},"data":{"navigation":{"logo":{"text":"ZEGO Live","type":"link","path":"index.html"},"main":[{"text":"SAMPLE APP","type":"label"},{"text":"Android","type":"link","path":"sample_app/android.html"},{"text":"GETTING STARTED","type":"label"},{"text":"Android","type":"link","path":"getting_started/android.html"},{"text":"iOS","type":"link","path":"getting_started/ios.html"},{"text":"SUPPORT AND FEEDBACK","type":"label"},{"text":"Error codes","type":"link","path":"error_code.html"},{"text":"Contact us","type":"link","path":"https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"}]}},"config":{"timezone":"UTC","root":"/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"images/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">ZEGO Live</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <h1 id="ZEGO-Live"><a href="#ZEGO-Live" class="headerlink" title="ZEGO Live"></a>ZEGO Live</h1><p>ZEGO Live is a one-stop product that you can use to build interactive live streaming experiences. You can create single-host, multi-host live streaming sessions with audio effects, face beautification, and more features provided by ZEGOCLOUD.</p>
+<p>With ZEGO Live, users can create a live room to host, watch live video streaming events, invite participants in the live room to co-host, and more. Participants can send text messages to interact with the host and co-hosts in real time.</p>
+<p>ZEGO Live can cover typical scenarios include live video streaming, live online classes, live-stream shopping/e-commerce, or live game streaming.</p>
+<h2 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><div class="mk-warning" style="background: #fafbfc;border: 1px solid #ff8830;border-radius: 4px;border-top-width: 4px;padding: 20px 20px 6px 20px;"><div style="color: #ff8830;">⚠️ Caution:</div>
+
+<p>Before getting started with the ZEGO Live application, <strong>contact us to activate the ZEGO Live (RTC + IM + Effects) service</strong>, and then do the following:</p>
+<p></div></p>
+<h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><ul>
+<li><a href="https://developer.android.com/studio" target="_blank" rel="noopener">Android Studio 2020.3.1 or later</a></li>
+<li>Android SDK Packages: Android SDK 30, Android SDK Platform-Tools 30.x.x or later.</li>
+<li>An Android device or Simulator that is running on Android 4.1 or later and supports audio and video. We recommend you use a real device (Remember to enable <strong>USB debugging</strong> for the device).</li>
+<li>Create a project in <a href="https://console.zegocloud.com/" target="_blank" rel="noopener">ZEGO Admin Console</a>. For details, see <a href="https://docs.zegocloud.com/article/1271" target="_blank" rel="noopener">ZEGO Admin Console - Project management</a>.</li>
+</ul>
+<h3 id="Modify-the-project-configurations"><a href="#Modify-the-project-configurations" class="headerlink" title="Modify the project configurations"></a>Modify the project configurations</h3><ol>
+<li>Open Terminal, navigate to the cloned project repository.</li>
+<li>Run the configuration script with the <code>./configure.sh</code> command. And fill in the AppID, AppSign, and ServerSecret, which can be obtained in the <a href="https://console.zegocloud.com/" target="_blank" rel="noopener">ZEGO Admin Console</a>.<br><strong>Note</strong>: If you are using Windows system, double-click the <code>configure.bat</code> to run the configuration script.<br><img src="../images/sample_app/configure_android.png" alt="lib_app_config.png"></li>
+</ol>
+<h3 id="Run-the-sample-code"><a href="#Run-the-sample-code" class="headerlink" title="Run the sample code"></a>Run the sample code</h3><ol>
+<li>Open the ZEGO Live project in Android Studio.</li>
+<li>Make sure the developer mode and USB debugging are enabled for the Android device, and connect the Android device to your computer.</li>
+<li>If the <strong>Running Devices</strong> box in the upper area changes to the device name you are using, which means you are ready to run the sample code.  </li>
+<li>Run the sample code on your device to experience the ZEGO Live service.</li>
+</ol>
+<h3 id="Project-structure"><a href="#Project-structure" class="headerlink" title="Project structure"></a>Project structure</h3><p>The project consists of two modules: <strong>app and zegolive</strong>.</p>
+<h4 id="app"><a href="#app" class="headerlink" title="app"></a>app</h4><p>The app module implements the business and UI interaction logic, including login, room list, live streaming, face beautify, sound effects feature, and more. The following shows the structure:</p>
+<p>Directory path:<br>{your_project_root_path}/live_android/app/src/main/java/im/zego/live:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── App.java                ------ App resources, and SDK initialization</span><br><span class="line">├── base</span><br><span class="line">├── constants</span><br><span class="line">├── feature                ------ Business logic of core features </span><br><span class="line">│ ├── live                ------ Live room related</span><br><span class="line">│ ├── login                ------ Login </span><br><span class="line">│ ├── room                ------ Room list</span><br><span class="line">│ ├── settings                ------ Settings page</span><br><span class="line">│ └── webview                ------ Web pages presented within the app</span><br><span class="line">├── helper                ------ Utilities</span><br><span class="line">└── view                ------ Customizable UI</span><br></pre></td></tr></table></figure></p>
+<h4 id="zegolive"><a href="#zegolive" class="headerlink" title="zegolive"></a>zegolive</h4><p>The zegolive improves reusability and further encapsulates the RTC, IM, and Effects for you to integrate easier. The following shows the structure:</p>
+<p>Directory path:<br>{your_project_root_path}/live_android/zegolive/src/main/java/im/zego/live:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── ZegoRoomManager.java                ------ Room related instances that used to initialize the SDK, and provide the capabilities for service implementation.</span><br><span class="line">├── ZegoZIMManager.java                ------ The ZIM instances for the SDK use.</span><br><span class="line">├── callback</span><br><span class="line">├── constants</span><br><span class="line">├── helper</span><br><span class="line">├── http</span><br><span class="line">├── listener</span><br><span class="line">├── model</span><br><span class="line">├── service             </span><br><span class="line">│ ├── ZegoDeviceService.java                ------ Streaming and device related service, such as stream publishing, playing and configure audio and video settings. </span><br><span class="line">│ ├── ZegoFaceBeautifyService.java                ------ Face beautify service</span><br><span class="line">│ ├── ZegoMessageService.java                ------ Real-time messaging service</span><br><span class="line">│ ├── ZegoRoomListService.java                ------ Business server related sercice, such as room list updates, in-room heartbeat and more.</span><br><span class="line">│ ├── ZegoRoomService.java                ------ Room related service, such as join&#x2F;leave a room, update room information, and more.</span><br><span class="line">│ ├── ZegoSoundEffectService.java                ------  Sound effects service</span><br><span class="line">│ └── ZegoUserService.java                ------ User related service, such as take&#x2F;leave a seat, turn on&#x2F;off the microphone&#x2F;camera, make co-host, and more.</span><br><span class="line">└── util</span><br></pre></td></tr></table></figure>
+<h2 id="More-documentation"><a href="#More-documentation" class="headerlink" title="More documentation"></a>More documentation</h2><p>You can find more documentation on here: <a href="http://localhost:4000/getting_started/android.html" target="_blank" rel="noopener">Getting Started)</a>.</p>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/script/doc.js"></script>
+
+    
+
+  </body>
+</html>
