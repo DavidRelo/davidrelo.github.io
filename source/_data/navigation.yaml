@@ -1,10 +1,19 @@
 {
   "logo": {
-    "text": "ZEGOLive",
+    "text": "ZEGO Live",
     "type": "link",
     "path": "index.html"
   },
   "main": [
+    {
+      "text": "SAMPLE APP",
+      "type": "label"
+    },
+    {
+      "text": "Android",
+      "type": "link",
+      "path": "sample_app/android.html"
+    },
     {
       "text": "GETTING STARTED",
       "type": "label"
@@ -24,7 +33,12 @@
       "type": "label"
     },
     {
-      "text": "Raise an Issue on Github",
+      "text": "Error codes",
+      "type": "link",
+      "path": "error_code.html"
+    },
+    {
+      "text": "Contact us",
       "type": "link",
       "path": "https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"
     }
