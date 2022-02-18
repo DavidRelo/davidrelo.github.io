@@ -88,4 +88,4 @@ Directory path:
 ```
 
 ## More documentation
-You can find more documentation on here: [Getting Started)](http://localhost:4000/getting_started/android.html).
+You can find more documentation on here: [Getting Started](http://localhost:4000/getting_started/android.html).
