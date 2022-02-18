@@ -6,7 +6,7 @@
   },
   "main": [
     {
-      "text": "SAMPLE APP",
+      "text": "RUN SAMPLE APP",
       "type": "label"
     },
     {
@@ -40,7 +40,7 @@
     {
       "text": "Contact us",
       "type": "link",
-      "path": "https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"
+      "path": "contact_us.html"
     }
   ]
 }
